@@ -1,7 +1,7 @@
 # Emotion-Detection-Model
 
-## 📌 Introduction
-This project implements a facial emotion recognition system based on **Facial Action Units (AUs)**, which are numerical indicators of muscle movements in the face according to the Facial Action Coding System (FACS).  
+## Introduction
+This project implements a facial emotion recognition system based on facial **Action Units (AUs)**, which are numerical indicators of muscle movements in the face according to the Facial Action Coding System (FACS).  
 Instead of working directly on raw images, this system takes pre-extracted AU intensity values and predicts one of six basic emotions, using a neural network trained on synthetically generated AU datasets.  
 
 The pipeline consists of three main components:
@@ -11,7 +11,7 @@ The pipeline consists of three main components:
 
 ---
 
-## 😃 Action Units to Emotion Mapping
+## Action Units to Emotion Mapping
 Each emotion is defined by a set of **positive AUs** (high activation), **negative AUs** (low activation), and **optional AUs** (can vary).  
 The table below shows the mapping used in this project:
 
@@ -28,7 +28,7 @@ The table below shows the mapping used in this project:
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ### `generate_data.py`
 - Generates a **synthetic dataset** (`dataset_AUs.csv`) containing AU values for each emotion.
@@ -63,7 +63,17 @@ The table below shows the mapping used in this project:
 
 ---
 
-## 🚀 Usage
+## Requirements
+
+Install all dependencies:
+
+```
+pip install -r requirements.txt
+```
+
+---
+
+## Usage
 
 ### 1. Generate Dataset
 ```
@@ -84,4 +94,25 @@ Training results will be saved under **training_sessions/**.
 python predict.py
 ```
 
+You can toggle between CSV input and manual samples by changing the **use_csv** flag in the script.
 
+---
+
+## Output Example
+
+Training session folder structure:
+
+```
+training_sessions/
+  ├── train/
+  │   ├── model/
+  │   │   ├── emotion_detection_best.keras
+  │   │   └── emotion_detection_last.keras
+  │   ├── accuracy_curve_train.png
+  │   ├── accuracy_curve_val.png
+  │   ├── confusion_matrix.png
+  │   ├── confusion_matrix_normalized.png
+  │   ├── classification_report.txt
+  │   ├── metrics_barplot.png
+  │   └── extra_metrics.txt
+```
