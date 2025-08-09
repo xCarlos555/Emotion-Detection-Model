@@ -98,9 +98,7 @@ You can toggle between CSV input and manual samples by changing the **use_csv** 
 
 ---
 
-## Output Example
-
-Training session folder structure:
+## Training session folder structure:
 
 ```
 training_sessions/
